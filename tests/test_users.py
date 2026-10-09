@@ -1,11 +1,13 @@
+"""Unit tests for the user factory and user subclasses."""
+
 import unittest
 from user import create_user, Admin, Editor, Viewer
 
 
 class TestUser(unittest.TestCase):
-
+    """Test user creation for each supported user type."""
     def test_admin_user_created(self):
-
+        """Verify that an admin user is created with the correct name."""
         user_type = "admin"
         name = "Wendy"
 
@@ -15,7 +17,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue(new_user.name, "Wendy")
 
     def test_editor_user_created(self):
-
+        """Verify that an editor user is created with the correct name."""
         user_type = "editor"
         name = "Jim"
 
@@ -25,7 +27,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue(new_user.name, "Jim")
 
     def test_viewer_user_created(self):
-
+        """Verify that a viewer user is created with the correct name."""
         user_type = "viewer"
         name = "Harry"
 
@@ -35,7 +37,7 @@ class TestUser(unittest.TestCase):
         self.assertTrue(new_user.name, "Harry")
 
     def test_missing_input_returns_none(self):
-
+        """Verify that None is returned if missing user input."""
         user_type = ""
         name = "Harry"
 
